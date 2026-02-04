@@ -1,4 +1,9 @@
 import pandas as pd
 
 def load_logs(path):
-    return pd.read_csv(path)
+    import pandas as pd
+    try:
+        return pd.read_csv(path)
+    except pd.errors.EmptyDataError:
+        return pd.DataFrame()
+
